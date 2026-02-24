@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.subsystems.MechanumDrive;
+package org.firstinspires.ftc.teamcode.subsystems.MecanumDrive;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -8,12 +8,12 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import org.firstinspires.ftc.teamcode.common.Robot_Constants;
 
-public class MechanumDrive_Subsystem {
+public class MecanumDrive_Subsystem {
 
     public final DcMotorEx fl, fr, bl, br;
     static final double TICKS_PER_REV = 537.6;
 
-    public MechanumDrive_Subsystem(HardwareMap hw) {
+    public MecanumDrive_Subsystem(HardwareMap hw) {
         fl = hw.get(DcMotorEx.class, Robot_Constants.M_FL);
         fr = hw.get(DcMotorEx.class, Robot_Constants.M_FR);
         bl = hw.get(DcMotorEx.class, Robot_Constants.M_BL);
@@ -45,9 +45,9 @@ public class MechanumDrive_Subsystem {
         double frP = (rotY - rotX - rx) / denominator;
         double brP = (rotY + rotX - rx) / denominator;
 
-        double scale = MechanumDrive_Constants.MOVING_SPEED;       // default
-        if (fast) scale = MechanumDrive_Constants.MOVING_SPEED_FAST;
-        if (slow) scale = MechanumDrive_Constants.MOVING_SPEED_SLOW;
+        double scale = MecanumDrive_Constants.MOVING_SPEED;       // default
+        if (fast) scale = MecanumDrive_Constants.MOVING_SPEED_FAST;
+        if (slow) scale = MecanumDrive_Constants.MOVING_SPEED_SLOW;
 
         if (rwd){
             bl.setPower(blP * scale);
@@ -61,10 +61,10 @@ public class MechanumDrive_Subsystem {
         }
     }
 
-    public void nudgeLeft(LinearOpMode op)  { nudge(-MechanumDrive_Constants.SCOOTCH_POWER,  MechanumDrive_Constants.SCOOTCH_POWER,  MechanumDrive_Constants.SCOOTCH_POWER, -MechanumDrive_Constants.SCOOTCH_POWER, op); }
-    public void nudgeRight(LinearOpMode op) { nudge( MechanumDrive_Constants.SCOOTCH_POWER, -MechanumDrive_Constants.SCOOTCH_POWER, -MechanumDrive_Constants.SCOOTCH_POWER,  MechanumDrive_Constants.SCOOTCH_POWER, op); }
-    public void nudgeForward(LinearOpMode op){ nudge( MechanumDrive_Constants.SCOOTCH_POWER,  MechanumDrive_Constants.SCOOTCH_POWER,  MechanumDrive_Constants.SCOOTCH_POWER,  MechanumDrive_Constants.SCOOTCH_POWER, op); }
-    public void nudgeBack(LinearOpMode op)  { nudge(-MechanumDrive_Constants.SCOOTCH_POWER, -MechanumDrive_Constants.SCOOTCH_POWER, -MechanumDrive_Constants.SCOOTCH_POWER, -MechanumDrive_Constants.SCOOTCH_POWER, op); }
+    public void nudgeLeft(LinearOpMode op)  { nudge(-MecanumDrive_Constants.SCOOTCH_POWER,  MecanumDrive_Constants.SCOOTCH_POWER,  MecanumDrive_Constants.SCOOTCH_POWER, -MecanumDrive_Constants.SCOOTCH_POWER, op); }
+    public void nudgeRight(LinearOpMode op) { nudge( MecanumDrive_Constants.SCOOTCH_POWER, -MecanumDrive_Constants.SCOOTCH_POWER, -MecanumDrive_Constants.SCOOTCH_POWER,  MecanumDrive_Constants.SCOOTCH_POWER, op); }
+    public void nudgeForward(LinearOpMode op){ nudge( MecanumDrive_Constants.SCOOTCH_POWER,  MecanumDrive_Constants.SCOOTCH_POWER,  MecanumDrive_Constants.SCOOTCH_POWER,  MecanumDrive_Constants.SCOOTCH_POWER, op); }
+    public void nudgeBack(LinearOpMode op)  { nudge(-MecanumDrive_Constants.SCOOTCH_POWER, -MecanumDrive_Constants.SCOOTCH_POWER, -MecanumDrive_Constants.SCOOTCH_POWER, -MecanumDrive_Constants.SCOOTCH_POWER, op); }
 
     public void jossel (LinearOpMode op){
         nudgeForward(op);
@@ -73,7 +73,7 @@ public class MechanumDrive_Subsystem {
 
     private void nudge(double flP, double frP, double blP, double brP, LinearOpMode op) {
         fl.setPower(flP); fr.setPower(frP); bl.setPower(blP); br.setPower(brP);
-        op.sleep(MechanumDrive_Constants.SCOOTCH_DURATION_MS);
+        op.sleep(MecanumDrive_Constants.SCOOTCH_DURATION_MS);
     }
 
     // In DriveTrain.java
@@ -94,7 +94,7 @@ public class MechanumDrive_Subsystem {
     public double getRPM(DcMotorEx motor) {
         double tps = motor.getVelocity();      // ticks/second
         if (Double.isNaN(tps)) tps = 0.0;      // safety
-        return (tps * 60.0) / MechanumDrive_Constants.TICKS_PER_REV;   // convert to RPM
+        return (tps * 60.0) / MecanumDrive_Constants.TICKS_PER_REV;   // convert to RPM
     }
 
     public void testDrive() {
@@ -109,9 +109,9 @@ public class MechanumDrive_Subsystem {
     }
 
     public void assistRight(){
-        fl.setPower(MechanumDrive_Constants.TURN_SPEED); fr.setPower(-MechanumDrive_Constants.TURN_SPEED); bl.setPower(-MechanumDrive_Constants.TURN_SPEED); br.setPower(MechanumDrive_Constants.TURN_SPEED);
+        fl.setPower(MecanumDrive_Constants.TURN_SPEED); fr.setPower(-MecanumDrive_Constants.TURN_SPEED); bl.setPower(-MecanumDrive_Constants.TURN_SPEED); br.setPower(MecanumDrive_Constants.TURN_SPEED);
     }
     public void assistLeft(){
-        fl.setPower(-MechanumDrive_Constants.TURN_SPEED); fr.setPower(MechanumDrive_Constants.TURN_SPEED); bl.setPower(MechanumDrive_Constants.TURN_SPEED); br.setPower(-MechanumDrive_Constants.TURN_SPEED);
+        fl.setPower(-MecanumDrive_Constants.TURN_SPEED); fr.setPower(MecanumDrive_Constants.TURN_SPEED); bl.setPower(MecanumDrive_Constants.TURN_SPEED); br.setPower(-MecanumDrive_Constants.TURN_SPEED);
     }
 }

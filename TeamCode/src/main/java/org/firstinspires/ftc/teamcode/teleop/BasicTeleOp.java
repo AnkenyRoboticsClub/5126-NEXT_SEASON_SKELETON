@@ -2,19 +2,19 @@ package org.firstinspires.ftc.teamcode.teleop;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-import org.firstinspires.ftc.teamcode.subsystems.MechanumDrive.MechanumDrive_Subsystem;
+import org.firstinspires.ftc.teamcode.subsystems.MecanumDrive.MecanumDrive_Subsystem;
 import org.firstinspires.ftc.teamcode.common.ImuUtil;
 
 
 @TeleOp(name="Basic TeleOp", group="Linear OpMode")
 public class BasicTeleOp extends LinearOpMode {
 
-    private MechanumDrive_Subsystem drive;
+    private MecanumDrive_Subsystem drive;
     private ImuUtil imu;
 
     @Override
     public void runOpMode() {
-        drive   = new MechanumDrive_Subsystem(hardwareMap);
+        drive   = new MecanumDrive_Subsystem(hardwareMap);
         imu     = new ImuUtil(hardwareMap);
 
         waitForStart();

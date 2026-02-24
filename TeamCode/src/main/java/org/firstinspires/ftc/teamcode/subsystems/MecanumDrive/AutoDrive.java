@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.subsystems.MechanumDrive;
+package org.firstinspires.ftc.teamcode.subsystems.MecanumDrive;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -61,7 +61,7 @@ public class AutoDrive {
         resetDriveEncoders();
 
         // Convert inches → ticks using RobotConstants
-        int targetTicks = (int) Math.round(inches * MechanumDrive_Constants.TICKS_PER_INCH);
+        int targetTicks = (int) Math.round(inches * MecanumDrive_Constants.TICKS_PER_INCH);
         double direction = Math.signum(inches);
 
         maxPower = Math.abs(maxPower) * direction;
@@ -163,7 +163,7 @@ public class AutoDrive {
         // Capture the heading you want to hold RIGHT NOW
         double targetDeg = Math.toDegrees(imu.getHeadingRad());
 
-        int targetTicks = (int) Math.round(Math.abs(inches) * MechanumDrive_Constants.TICKS_PER_INCH);
+        int targetTicks = (int) Math.round(Math.abs(inches) * MecanumDrive_Constants.TICKS_PER_INCH);
         if (targetTicks <= 0) {
             stopAll();
             return;

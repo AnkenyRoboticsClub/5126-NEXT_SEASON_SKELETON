@@ -1,7 +1,7 @@
-package org.firstinspires.ftc.teamcode.subsystems.MechanumDrive;
+package org.firstinspires.ftc.teamcode.subsystems.MecanumDrive;
 
-public class MechanumDrive_Constants {
-    private MechanumDrive_Constants() {}
+public class MecanumDrive_Constants {
+    private MecanumDrive_Constants() {}
     static final double TICKS_PER_REV = 537.6;
     // Drive speed scales, power # is from 0 -> 1, 0=0% and 1=100%
     public static final double TURN_SPEED          = 0.7; //Prob should stay the same as default speed, honestly idk

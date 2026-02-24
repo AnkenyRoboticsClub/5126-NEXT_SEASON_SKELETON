@@ -13,12 +13,12 @@ import org.firstinspires.ftc.robotcore.external.navigation.Pose3D;
 import org.firstinspires.ftc.robotcore.external.navigation.Position;
 import org.firstinspires.ftc.teamcode.common.ImuUtil;
 import org.firstinspires.ftc.teamcode.common.Robot_Constants;
-import org.firstinspires.ftc.teamcode.subsystems.MechanumDrive.MechanumDrive_Subsystem;
+import org.firstinspires.ftc.teamcode.subsystems.MecanumDrive.MecanumDrive_Subsystem;
 
 public class LimeLight_Subsystem {
     // ---------------------------- Members ----------------------------
 
-    private final MechanumDrive_Subsystem drive;
+    private final MecanumDrive_Subsystem drive;
     private final ImuUtil imu; // not required for robot-centric, but keeping because you pass it in
     private Limelight3A limelight;
 
@@ -27,7 +27,7 @@ public class LimeLight_Subsystem {
     private double filteredBearingDeg = 0.0;
     private double lastTurnCmd = 0.0;
 
-    public LimeLight_Subsystem(MechanumDrive_Subsystem drive, ImuUtil imu) {
+    public LimeLight_Subsystem(MecanumDrive_Subsystem drive, ImuUtil imu) {
         this.drive = drive;
         this.imu = imu;
     }
