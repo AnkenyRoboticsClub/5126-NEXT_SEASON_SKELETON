@@ -9,6 +9,7 @@ It includes reusable subsystem classes, constants, and one basic TeleOp so the n
 - **Mechanum Drive** (field-centric + robot-centric drive helpers, nudge/scootch helpers)
   - `TeamCode/.../subsystems/MechanumDrive/MechanumDrive_Subsystem.java`
   - `TeamCode/.../subsystems/MechanumDrive/MechanumDrive_Constants.java`
+  - `TeamCode/.../subsystems/MechanumDrive/AutoDrive.java`
 - **Viper Slide** (manual, hold power logic, presets)
   - `TeamCode/.../subsystems/ViperSlide/ViperSlide_Subsystem.java`
   - `TeamCode/.../subsystems/ViperSlide/ViperSlide_Constants.java`
@@ -181,5 +182,7 @@ If you are reading this next season:
 2. Test `Basic TeleOp` driving only.
 3. Bring up one subsystem at a time (viper, arm, then others).
 4. Tune constants slowly and commit often.
+5. Disable and or deleat any susbsystems not in use
 
-Good luck and build something awesome 🚀
+This Repo can and should be fully modified by you guys, I made this to not leave you with nothing next year
+Good luck - Jayden Brady
